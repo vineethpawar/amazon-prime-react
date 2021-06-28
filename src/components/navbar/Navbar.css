@@ -1,0 +1,77 @@
+.navbar{
+    background-color: #1a242f;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:white;
+    font-weight: 300;
+    user-select: none;
+ }
+
+ .prime__logo{
+     height: 35px;
+     width: auto;
+ }
+
+ .select__user{
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    opacity:0.8;
+ }
+ .select__user:hover{
+   opacity:1;
+ }
+
+ .current__user{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+ }
+
+
+ .current__user__wrapper{
+        position: relative;
+ }
+
+
+ .user__profile__icon{
+    height: 30px !important;
+    width: 30px !important;
+    color:blue;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;  
+    
+ }
+ .add__profile__icon{
+    height: 34px !important;
+    width: 34px !important;
+    color:#fff;
+  
+    border-radius: 50%;
+    margin-right: 7px;  
+    
+ }
+
+
+ .current__user__dropdown{
+     position: absolute;
+     top:120%;
+     right:0;
+     z-index:2;
+     opacity:1;
+     background-color: #252e39;
+     border-radius: 5px;
+     padding: 10px 15px;
+
+ }
+
+ .current__user__dropdown__options{
+     display: flex;
+     flex-direction: column;
+ }
