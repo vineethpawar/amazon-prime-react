@@ -1,0 +1,20 @@
+.movie__row{
+    position:relative;
+    display: flex;
+    padding: 45px;
+    overflow: scroll;
+}
+
+.movie__row::-webkit-scrollbar{
+    display: none;
+}
+.movie__component__wrapper{
+    position:relative;
+    padding-right: 10px;
+}
+
+.movie__component__wrapper:hover{
+    position:relative;
+    z-index:20;
+  
+}

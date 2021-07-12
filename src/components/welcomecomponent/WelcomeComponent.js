@@ -3,7 +3,6 @@ import './WelcomeComponent.css'
 
 
 
-
 function WelcomeComponent() {
 
    

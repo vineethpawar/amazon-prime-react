@@ -1,0 +1,123 @@
+.movie__component{
+    position:relative;  
+}
+
+.movie__wrapper__small{
+    position:relative;
+    cursor: pointer;
+    z-index:2;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.movie__wrapper__small > img{
+  border-radius: 5px;
+}
+
+.movie__wrapper__large{
+    transition:transform 0.2s linear;
+    position:relative;
+    transform:translateY(-10px) scale(1.1);
+    z-index: 10;
+    cursor: pointer; 
+    border-radius: 5px;
+    width: 300px;
+}
+
+.movie__wrapper__large > img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.movie__img{
+  width: 100%;
+}
+
+.movie__content{
+    padding: 0 15px;
+    position:relative;
+    z-index:30;
+    box-shadow: 0px -5px 2px 1px rgba(27,37,48,1);
+    -webkit-box-shadow: 0px -5px 2px 1px rgba(27,37,48,1);
+    -moz-box-shadow: 0px -5px 2px 1px rgba(27,37,48,1);
+    background:#1b2530;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.play__span{
+    transition:0.2s ease-out;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    width:fit-content;
+    position: relative;
+    background-color: #000;
+    border-radius: 50%;
+    border:2px solid white;
+}
+
+.play__span:hover{
+    background-color: #2895c1;
+    border:2px solid #1b2530;
+}
+
+.icon__row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons__left,.icons__right{
+    display: flex;
+    align-items: center;
+}
+
+.icn__span,.icn__span:link{
+    transition:0.2s ease-out;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    width:fit-content;
+    position: relative;
+    border-radius: 50%;
+    margin-left: 4px;
+}
+
+.icn__span:hover{
+  background-color: rgba(0, 0, 0, 0.233);
+}
+
+.plus__icn{
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.block__icn{
+    margin: 3px;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.content__row{
+    margin-top: 10px;
+}
+
+.movie__title{
+    font-style: 16px;
+}
+
+.movie__description{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.movie__numericals{
+    padding-top: 6px;
+    display: flex;
+    font-size: 13px;
+    padding-bottom: 8px;
+}
+
+.movie__numericals > span{
+    margin-right: 10px;
+}

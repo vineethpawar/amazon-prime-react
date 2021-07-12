@@ -1,5 +1,7 @@
 body{
     overflow-y: auto;
+    background-color: #0f171e;
+   color:white;
 }
 
 body::-webkit-scrollbar{
