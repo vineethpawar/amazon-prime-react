@@ -1,8 +1,18 @@
+
+.movie__row__title{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 45px;
+    transform: translateY(15px);
+}
+
+
 .movie__row{
     position:relative;
     display: flex;
-    padding: 45px;
-    overflow: scroll;
+    padding:30px 45px 10px;
+    width:100vw;
+    overflow: auto;
 }
 
 .movie__row::-webkit-scrollbar{
@@ -18,3 +28,4 @@
     z-index:20;
   
 }
+

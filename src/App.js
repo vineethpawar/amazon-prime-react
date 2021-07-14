@@ -8,13 +8,15 @@ function App() {
 
   return (
 
-   <div className="app">
+    <div className="app">
 
       {/* <WelcomeScreen/> */}
-       <MovieScreen/>
-       
-   </div>
-    
+      <MovieScreen />
+        {/* <iframe className="movie__video" width="auto" src={`https://www.youtube.com/embed/co-VZiZNHfU?loop=1&playlist=co-VZiZNHfU&controls=0&autoplay=1&mute=1`} frameBorder="0" allow="autoplay;encrypted-media;" allowFullScreen></iframe> */}
+
+
+    </div>
+
   );
 }
 

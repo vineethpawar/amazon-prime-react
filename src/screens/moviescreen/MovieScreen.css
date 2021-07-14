@@ -1,0 +1,50 @@
+
+.movie__strips{
+    position:relative;
+}
+
+.movie__row__strip{
+    position:absolute;
+    margin-bottom: 10px;
+}
+
+.movie__row__strip:hover{
+z-index:50;
+}
+
+
+.movie__row__strip1{
+  top:calc(250px * 0);
+}
+
+.movie__row__strip2{
+   top:calc(250px * 1);
+}
+
+.movie__row__strip3{
+   top:calc(250px * 2);
+}
+
+.movie__row__strip4{
+   top:calc(250px * 3);
+}
+
+.movie__row__strip5{
+   top:calc(250px * 4);
+}
+
+.movie__row__strip6{
+   top:calc(250px * 5);
+}
+
+.movie__row__strip7{
+   top:calc(250px * 6);
+}
+
+.movie__row__strip8{
+   top:calc(250px * 8);
+}
+
+.movie__row__strip9{
+   top:calc(250px * 9);
+}

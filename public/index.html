@@ -31,14 +31,46 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-  
- 
+    <!-- <script> 
+    let LOOK_DELAY=1600
+    let startLookTime = -1
+    let state='unset';
+    let synced_once=false;
+    const open = () =>{
+      if(state!='open') console.log('eye synced')
+      state='open'
+    }
+
+    const close = () =>{
+      if(state!='close') console.log('eye broken')
+      state='close'
+    }
+
+     </script>
+    <script defer src="./webgazer.js" ></script>
+    <script defer>
+      window.onload=function(){ 
+
+    //     window.saveDataAcrossSessions = true;
+    //     webgazer.setGazeListener(function(data, timestamp) {
+    //        if (data == null) { if(synced_once && startLookTime>0) {close();}  startLookTime=-1; return;}
+    //        else {
+    //           startLookTime < 0 ? startLookTime = timestamp : null;
+    //           if(startLookTime + LOOK_DELAY < timestamp){ open(); synced_once=true;}
+    
+    //         } 
+
+    //      }).begin(); 
+
+    // webgazer.showVideoPreview(false).showPredictionPoints(false)
+  // }
+    </script>-->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 
-<script>
+<!-- <script> 
 
     // const pay = (order) => {
 
@@ -82,6 +114,6 @@
   
 
 
-</script>
+</script>-->
   </body>
 </html>
