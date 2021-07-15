@@ -5,10 +5,7 @@ import './WelcomeComponent.css'
 
 function WelcomeComponent() {
 
-   
-
-
-    
+  
     return (
         <div className="welcome__component">
             <div className="row row__comp">

@@ -2,20 +2,24 @@
 .movie__row__title{
     font-size: 20px;
     font-weight: 500;
-    padding-left: 45px;
+    padding-left: 65px;
     transform: translateY(15px);
+    text-transform: capitalize;
 }
 
 
 .movie__row{
     position:relative;
-    display: flex;
-    padding:30px 45px 10px;
-    width:100vw;
-    overflow: auto;
+    width:100vw; 
 }
 
-.movie__row::-webkit-scrollbar{
+.movie__row__container{
+    display: flex;
+    overflow: auto;
+    padding:30px 65px 10px;
+}
+
+.movie__row__container::-webkit-scrollbar{
     display: none;
 }
 .movie__component__wrapper{
@@ -29,3 +33,28 @@
   
 }
 
+.carousal__scroller{
+    margin-top: 28px;
+    z-index:21;
+    position:absolute;
+    height:170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:65px;
+    background-color:rgba(0, 0, 0, 0.808);
+    cursor: pointer;
+}
+
+.movie__row__scroll__left{
+    left:0;  
+}
+
+.movie__row__scroll__right{
+    right:0;
+}
+
+.icn__arrow{
+   height:30px !important;
+   width:30px !important;
+}

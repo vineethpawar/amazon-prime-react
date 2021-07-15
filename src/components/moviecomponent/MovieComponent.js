@@ -15,7 +15,7 @@ import './MovieComponent.css'
 import Axios from 'axios'
 import {API_KEY} from '../../request.js'
 
-function MovieComponent({id,movieTitle,image,description,release,rating,type="movie",popularity,selectedComponent,muteState,changeMuteState})
+function MovieComponent({id,movieTitle,image,description,release,rating,type="movie",popularity,selectedComponent,muteState,changeMuteState,rowTitle,selectedRow})
  {
 
     useEffect(()=>{
@@ -49,32 +49,32 @@ function MovieComponent({id,movieTitle,image,description,release,rating,type="mo
         
             tippy('.tippy__span__play', {
                 duration: 50,
-                delay: [100, 0],
+                delay: [200, 0],
                 content: 'Play',
             })
 
             tippy('.tippy__span__watchlist', {
                 duration: 50,
-                delay: [100, 0],
+                delay: [200, 0],
                 content: 'Watchlist',
             })
 
             tippy('.tippy__span__block', {
                 duration: 50,
-                delay: [100, 0],
+                delay: [200, 0],
                 content: 'Block',
             })
 
             tippy('.tippy__span__added', {
                 duration: 50,
-                delay: [100, 0],
+                delay: [200, 0],
                 content: 'Watchlist',
             })
 
     return ( 
     <div onMouseOver={() => cardGrow(true)}  onMouseLeave={()=>cardGrow(false)} > 
     
-    {id===selectedComponent ?
+    {id===selectedComponent && rowTitle===selectedRow?
         <div className="movie__component" >
             {
                 !expandedComponent ?
@@ -148,11 +148,12 @@ function MovieComponent({id,movieTitle,image,description,release,rating,type="mo
                                 <h6 className="movie__title">{title}</h6>
                                 <p className="movie__description">{ overview.length > 150 ?  `${overview.slice(0,150)}...` : overview}</p>
                                 <span className="movie__numericals">
-                                    <span className="time">{`60min`}</span>
+                                    <span className="time">★ {movieRating}</span>
 
-                               { release!==false ? <span title="release" className="year">{release}</span> :null }
+                               { release!==false ? <span title="release" className="year">📅 {releaseDate}</span> :null }
 
                                     <span title="media type" className="media__type">{type==='tv' ? 'TV series' : type}</span>
+                                    <span>{id}</span>
                                 </span>
 
                             </div>

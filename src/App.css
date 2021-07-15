@@ -3,7 +3,7 @@ body{
     overflow-x:hidden;
     background-color: #0f171e;
     color:white;
-
+    user-select: none;
 }
 
 body::-webkit-scrollbar{

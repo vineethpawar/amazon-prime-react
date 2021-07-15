@@ -1,0 +1,55 @@
+.movie__banner{
+    overflow-x: hidden;
+    
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0.541),#0f171e);
+ 
+}
+.movie__banner > .row{
+    color: #fff;
+    min-height: 75vh;
+    background:rgba(0, 0, 0, 0.966);
+  
+}
+
+.col_img_banner{
+    opacity:0.6;
+    background-position: right;
+    background-size: cover;
+    box-shadow: 101px -11px 72px 31px rgba(0,0,0,0.96) inset;
+    -webkit-box-shadow: 101px -11px 72px 31px rgba(0,0,0,0.96) inset;
+    -moz-box-shadow: 101px -11px 72px 31px rgba(0,0,0,0.96) inset;
+}
+
+
+
+.banner__btn{
+    padding: 7px 20px 7px 10px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+}
+.btn-primary{
+    background-color: #2d5e96;
+    border-color: #2d5e96;
+}
+.btn-primary:hover{
+    background-color: #1f3c5a;
+    border-color: #1a242f;
+}
+
+.btn-primary-outline{
+    background-color: transparent;
+    border:2px solid #2d5e96;
+     color:white;
+}
+.btn-primary-outline:hover{
+    background-color:#2d5e96;
+}
+
+.banner__btn__icn{
+    margin-right: 5px;
+}
+
+.banner__info{
+    font-size: 19px;
+}
