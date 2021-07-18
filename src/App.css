@@ -1,6 +1,8 @@
 body{
     overflow-y: auto;
     overflow-x:hidden;
+    width:100vw;
+    height:100vh;
     background-color: #0f171e;
     color:white;
     user-select: none;
@@ -17,5 +19,16 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
     background-color: #508aa5;
     border-radius: 20px;
+}
+
+.btn{
+    outline:none !important;
+    border:none !important;
+    cursor: pointer;
+}
+
+.btn:focus,.btn:active{
+    outline:none !important;
+    border:none !important;
 }
 

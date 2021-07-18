@@ -19,7 +19,7 @@ function Navbar() {
             src="https://res.cloudinary.com/dpjkblzgf/image/upload/v1624824154/Prime_Video_Logo_3_dkoung.png" alt="" />
                     
                     <div onClick={()=>setActiveItem('home')} className={activeItem==='home'?"nav__heading nav__active":"nav__heading"}>
-                            Home
+                        Home
                     </div>
 
                     <div onClick={()=>setActiveItem('tvshows')} className={activeItem==='tvshows'?"nav__heading nav__active":"nav__heading"}>
@@ -31,7 +31,7 @@ function Navbar() {
                     </div>
 
                     <div onClick={()=>setActiveItem('kids')} className={activeItem==='kids'?"nav__heading nav__active":"nav__heading"}>
-                            Kids
+                        Kids
                     </div>
 
               </div>

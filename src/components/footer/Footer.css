@@ -1,0 +1,48 @@
+.footer{
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.prime__logo__big{
+    width: 150px;
+}
+
+.footer > img{
+    margin-top: 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer__links{
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content:space-between;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer__link__item{
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer__link__item > a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:white;
+    justify-content: center;
+}
+
+.footer__link__item > a:hover{
+color:rgb(112, 160, 223);
+}
+
+
+.footer__link__item__img{
+    margin-right: 7px;
+}
