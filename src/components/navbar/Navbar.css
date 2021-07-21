@@ -27,8 +27,10 @@
     padding-top: 5px;
     padding-bottom: 5px;
     opacity:0.8;
+    padding: 5px 15px;
  }
  .select__user:hover{
+    background-color: rgba(0, 0, 0, 0.411);
    opacity:1;
  }
 
@@ -97,11 +99,32 @@
      opacity:1;
      background-color: #252e39;
      border-radius: 5px;
-     padding: 10px 15px;
+     
 
  }
 
  .current__user__dropdown__options{
      display: flex;
      flex-direction: column;
+ }
+
+ .movie__regions{
+    display: flex;
+    align-items: center;
+ }
+
+ .movie__region{
+    display: flex;
+    align-items: center;
+    padding:5px;
+    border-radius: 5px;
+    margin-right: 10px;
+ }
+
+ .movie__region:hover{
+    background-color: rgba(0, 0, 0, 0.301);
+ }
+
+ .movie__region__selected{
+   background-color: rgb(32, 136, 63);
  }

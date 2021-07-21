@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import './MovieRow.css'
+import './RecommendedRow.css'
 import MovieComponent from './../moviecomponent/MovieComponent';
 
 import Axios from 'axios'
@@ -19,14 +19,14 @@ const scrollRight = (elem) => {
 }
 
 
-function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedComponent, muteState, changeMuteState, selectedRow, changeScreen, updateScreen }) {
+function RecommendedRow({ requestURL, rowTitle, selectedComponent, changeSelectedComponent, muteState, changeMuteState, selectedRow, changeScreen, updateScroll }) {
     useEffect(() => {
         Axios.get(requestURL)
             .then(response => { setMoviesArray(response.data.results); console.log(response.data.results) })
             .catch(() => { })
-    }, [updateScreen])
+    }, [])
 
-
+    const [hoveredComponent, setHoveredComponent] = useState();
 
     const [moviesArray, setMoviesArray] = useState([
         {
@@ -133,8 +133,8 @@ function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedCompo
 
                 <div id={`movie_${rowTitle}`} className={`movie__row__container`}>
                     {moviesArray.map(movie =>
-                        <div key={movie.id} className="movie__component__wrapper" onMouseOver={() => changeSelectedComponent(movie.id)}>
-                            <MovieComponent changeScreen={changeScreen} id={movie.id} selectedComponent={selectedComponent} image={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} movieTitle={movie.title || movie.name} description={movie.overview} release={movie.release_date || false} rating={movie.vote_average} type={movie.media_type} popularity={movie.popularity} muteState={muteState} changeMuteState={changeMuteState} rowTitle={rowTitle} selectedRow={selectedRow} originalLanguage={movie.original_language} />
+                        <div key={movie.id} className="movie__component__wrapper" onMouseOver={() => setHoveredComponent(movie.id)} onClick={() => changeSelectedComponent(movie.id)}>
+                            <MovieComponent changeScreen={changeScreen} id={movie.id} selectedComponent={hoveredComponent} image={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} movieTitle={movie.title || movie.name} description={movie.overview} release={movie.release_date || false} rating={movie.vote_average} type={movie.media_type} popularity={movie.popularity} muteState={muteState} changeMuteState={changeMuteState} rowTitle={rowTitle} selectedRow={selectedRow} />
                         </div>
                     )
                     }
@@ -148,4 +148,4 @@ function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedCompo
     )
 }
 
-export default MovieRow
+export default RecommendedRow

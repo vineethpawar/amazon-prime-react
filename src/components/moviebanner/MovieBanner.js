@@ -5,21 +5,27 @@ import { API_KEY } from '../../request.js'
 import Axios from 'axios'
 import './MovieBanner.css'
 
-function MovieBanner({ originalLanguage, mediaType }) {
+function MovieBanner({ originalLanguage, mediaType, updateScreen }) {
 
     const [bannerImage, setBannerImage] = useState();
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
 
-    useEffect(() => {
-        let num = Math.floor((Math.random() * 10) + 1)
+    const updateAPI = (tries) => {
+        let num = Math.floor((Math.random() * 20) + 1)
         Axios.get(`https://api.themoviedb.org/3/${mediaType}/popular?api_key=${API_KEY}&with_original_language=${originalLanguage}&page=1`)
             .then((response) => {
-                setTitle(response.data.results[num].title)
+                console.log(response)
+                if (response.data.results[num].backdrop_path === null && tries < 10) updateAPI(tries + 1)
+                if (mediaType === 'movie') setTitle(response.data.results[num].title); else setTitle(response.data.results[num].name);
                 setDescription(response.data.results[num].overview)
                 setBannerImage(`https://image.tmdb.org/t/p/original${response.data.results[num].backdrop_path}`)
-            })
-    }, [])
+            }).catch(() => updateAPI())
+    }
+    useEffect(() => {
+        let tries = 0;
+        updateAPI(tries)
+    }, [updateScreen])
 
     return (
         <div className="movie__banner ">

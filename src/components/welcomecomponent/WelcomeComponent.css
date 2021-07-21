@@ -3,6 +3,7 @@
     padding-top: 60px;
     padding-bottom: 60px;
     background: #000;
+    width:100%;
  
 }
 
@@ -26,25 +27,25 @@
     background-position: right;
     background-size: cover;
     background-image: url('https://noamkroll.com/wp-content/uploads/2019/02/Why-Amazon-Prime-Could-Be-The-Best-Platform-To-Release-An-Independent-Feature-Film.jpg');
-    box-shadow: 101px -11px 72px 31px rgba(0,0,0,0.96) inset;
-    -webkit-box-shadow: 101px -11px 72px 31px rgba(0,0,0,0.96) inset;
-    -moz-box-shadow: 101px -11px 72px 31px rgba(0,0,0,0.96) inset;
+    box-shadow: 15vw -11px 72px 31px rgba(0,0,0,0.96) inset;
+    -webkit-box-shadow: 15vw -11px 72px 31px rgba(0,0,0,0.96) inset;
+    -moz-box-shadow: 15vw -11px 72px 31px rgba(0,0,0,0.96) inset;
 }
 
 .col_img2{
-    opacity:0.6;
+    opacity:1;
     max-height: 500px;
     min-height:200px;
     background-position: left;
     background-size: cover;
     background-image: url('https://res.cloudinary.com/dpjkblzgf/image/upload/v1624863808/Group_2_xaxsf0.png');
-    box-shadow: -164px 12px 146px 50px rgba(0,0,0,1) inset;
-    -webkit-box-shadow: -164px 12px 146px 50px rgba(0,0,0,1) inset;
-    -moz-box-shadow: -164px 12px 146px 50px rgba(0,0,0,1) inset;
+    box-shadow: -15vw 12px 146px 50px rgba(0,0,0,1) inset;
+    -webkit-box-shadow: -15vw 12px 146px 50px rgba(0,0,0,1) inset;
+    -moz-box-shadow: -15vw 12px 146px 50px rgba(0,0,0,1) inset;
 }
 
 .col_img3{
-    opacity:0.3;
+    opacity:0.4;
     max-height: 500px;
     min-height:200px;
     background-position: left;
@@ -52,9 +53,9 @@
     background-size: cover;
     
     background-image: url('https://image.freepik.com/free-vector/people-watching-movie-home_23-2148568229.jpg');
-    box-shadow: 172px -8px 115px -31px rgba(0,0,0,1) inset;
-    -webkit-box-shadow: 172px -8px 115px -31px rgba(0,0,0,1) inset;
-    -moz-box-shadow: 172px -8px 115px -31px rgba(0,0,0,1) inset;
+    box-shadow: 15vw -8px 115px -31px rgba(0,0,0,1) inset;
+    -webkit-box-shadow: 15vw -8px 115px -31px rgba(0,0,0,1) inset;
+    -moz-box-shadow: 15vw -8px 115px -31px rgba(0,0,0,1) inset;
 }
 .row__comp{
    padding-bottom: 20px;
@@ -80,3 +81,9 @@
 .join_prime{
     padding: 15px 35px;
 }
+
+
+.swal-overlay {
+    background-color: rgba(0, 0, 0, 0.918);
+  }
+

@@ -1,3 +1,17 @@
-/* .welcome__screen{
+.welcome__screen{
+    overflow-y: auto;
+    height: 100vh;
+}
 
-} */
+.welcome__screen::-webkit-scrollbar{
+    width: 7px;
+}
+
+.welcome__screen::-webkit-scrollbar-track{
+    background-color: #1a242f;
+}
+
+.welcome__screen::-webkit-scrollbar-thumb{
+    background-color: #508aa5;
+    border-radius: 20px;
+}

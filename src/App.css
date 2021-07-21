@@ -8,18 +8,6 @@ body{
     user-select: none;
 }
 
-body::-webkit-scrollbar{
-    width: 7px;
-}
-
-body::-webkit-scrollbar-track{
-    background-color: #1a242f;
-}
-
-body::-webkit-scrollbar-thumb{
-    background-color: #508aa5;
-    border-radius: 20px;
-}
 
 .btn{
     outline:none !important;
