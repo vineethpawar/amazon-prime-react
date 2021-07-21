@@ -9,9 +9,10 @@ razorpay.js
 # testing
 /coverage
 firebase.js
+.firebase\hosting.YnVpbGQ.cache
 # production
 /build
-
+.firebaserc
 # misc
 .DS_Store
 .env.local
