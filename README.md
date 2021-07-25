@@ -40,8 +40,7 @@ Italso has PWA Installability feature.
 ![Screenshot_8](https://user-images.githubusercontent.com/55575881/126893715-6e64aaed-c451-49cf-ad60-55a657e0fe2d.png)
 
 5.Payment Gateway - RazorPay
-![Screenshot_11](https://user-images.githubusercontent.com/55575881/126893825-35bce916-61ee-4a5e-a18b-2ca35b7b55d9.png)
-
+![Screenshot_12](https://user-images.githubusercontent.com/55575881/126893877-545711cc-5b9c-4475-8576-bc16ba93386c.png)
 
 
 
