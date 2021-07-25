@@ -12,7 +12,7 @@ Italso has PWA Installability feature.
 3. Authentication -[Yet to be added]
 4. Database - TMDB (The Movie DataBase - https://www.themoviedb.org/) API
 
-## Project functionalities
+## Project features
 
 1. Authentication - Google Sign in via Firebase
 2. Movie Trailer Popups same as original Prime Video (using Youtube Trailler API) with Audio options
