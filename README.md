@@ -1,4 +1,4 @@
-## Prime Video - Amazon Prime Video Video Streaming Clone
+## Movies Flix - Amazon Prime Video Video Streaming Clone
 
 This is a Prime Video Clone made using React JS and Firebase.
 This project is hosted at url: https://prime-clone-c6a65.web.app/ using Firebase. 
