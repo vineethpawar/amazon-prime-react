@@ -5,7 +5,7 @@ import Footer from './../../components/footer/Footer';
 import RecommendedRow from './../../components/recommendedrow/RecomendedRow';
 
 
-function RecommendedScreen({ movieId, mediaType, changeScreen, selectedRow, muteState, selectedComponent, changeMuteState, changeSelectedComponent, changeSelectedRow }) {
+function RecommendedScreen({ movieId, mediaType, changeScreen, selectedRow, muteState, selectedComponent, changeMuteState, changeSelectedComponent, changeSelectedRow,userDetails}) {
   useEffect(() => {
     document.getElementById('recommendedScreenID').scrollTop = 0;
   })
@@ -16,7 +16,7 @@ function RecommendedScreen({ movieId, mediaType, changeScreen, selectedRow, mute
 
       <div className="movie__strips">
         <div className="movie__row__strip movie__row__strip1" onMouseOver={() => changeSelectedRow(' ')}>
-          <RecommendedRow changeScreen={changeScreen} muteState={muteState} changeMuteState={changeMuteState} selectedComponent={selectedComponent} changeSelectedComponent={changeSelectedComponent} requestURL={`https://api.themoviedb.org/3/${mediaType}/${movieId}/recommendations?api_key=${API_KEY}&page=1`} rowTitle=' ' selectedRow={selectedRow} />
+          <RecommendedRow changeScreen={changeScreen} muteState={muteState} changeMuteState={changeMuteState} mediaType={mediaType}  selectedComponent={selectedComponent} changeSelectedComponent={changeSelectedComponent} requestURL={`https://api.themoviedb.org/3/${mediaType}/${movieId}/recommendations?api_key=${API_KEY}&page=1`} rowTitle=' ' selectedRow={selectedRow} userDetails={userDetails}/>
         </div>
 
         <div className="movie__row__strip movie__row__strip2" style={{ position: 'relative', padding: '80px 0 10px' }}>

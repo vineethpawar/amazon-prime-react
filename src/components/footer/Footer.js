@@ -46,7 +46,7 @@ function Footer() {
                     </a>
                 </span>
                 <span className="footer__link__item col-lg footer__link__blog">
-                    <a target="__blank" >
+                    <a  target="__blank" >
                         <LibraryBooksIcon className="footer__link__item__img" />
                         vineethpawar
                     </a>

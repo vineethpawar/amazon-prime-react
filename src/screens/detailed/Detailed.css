@@ -26,9 +26,9 @@
     position: relative;
     z-index: 2;
     font-size: 18px;
-    padding: 40px;
-    width:45%;
-    min-width:500px;
+    /* padding: 40px; */
+    /* width:45%; */
+    /* min-width:500px; */
 }
 
 .background__overlay{
@@ -75,6 +75,7 @@
     width: 45px !important; 
 }
 
+
 .detailed__btn{
     cursor: pointer;
     border:none;
@@ -109,4 +110,12 @@
     z-index: 2;
     display: flex;
     justify-content: center;
+}
+
+.detailed__bg__mobile{
+    background-position: center;
+    background-size: cover;
+    box-shadow: -10px -78px 44px 14px #0f171e inset;
+    -webkit-box-shadow: -10px -78px 44px 14px #0f171e inset;
+    -moz-box-shadow: -10px -78px 44px 14px #0f171e inset;
 }

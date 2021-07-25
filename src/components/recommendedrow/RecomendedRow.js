@@ -19,11 +19,13 @@ const scrollRight = (elem) => {
 }
 
 
-function RecommendedRow({ requestURL, rowTitle, selectedComponent, changeSelectedComponent, muteState, changeMuteState, selectedRow, changeScreen, updateScroll }) {
+function RecommendedRow({ requestURL, rowTitle, selectedComponent, changeSelectedComponent, muteState, changeMuteState, selectedRow, changeScreen, updateScroll ,mediaType,userDetails}) {
     useEffect(() => {
         Axios.get(requestURL)
-            .then(response => { setMoviesArray(response.data.results); console.log(response.data.results) })
+            .then(response => { setMoviesArray(response.data.results);})
             .catch(() => { })
+       
+            
     }, [])
 
     const [hoveredComponent, setHoveredComponent] = useState();
@@ -134,7 +136,7 @@ function RecommendedRow({ requestURL, rowTitle, selectedComponent, changeSelecte
                 <div id={`movie_${rowTitle}`} className={`movie__row__container`}>
                     {moviesArray.map(movie =>
                         <div key={movie.id} className="movie__component__wrapper" onMouseOver={() => setHoveredComponent(movie.id)} onClick={() => changeSelectedComponent(movie.id)}>
-                            <MovieComponent changeScreen={changeScreen} id={movie.id} selectedComponent={hoveredComponent} image={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} movieTitle={movie.title || movie.name} description={movie.overview} release={movie.release_date || false} rating={movie.vote_average} type={movie.media_type} popularity={movie.popularity} muteState={muteState} changeMuteState={changeMuteState} rowTitle={rowTitle} selectedRow={selectedRow} />
+                            <MovieComponent mediaType={mediaType} changeScreen={changeScreen} id={movie.id} selectedComponent={hoveredComponent} image={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} movieTitle={movie.title || movie.name} description={movie.overview} release={movie.release_date || false} rating={movie.vote_average} type={movie.media_type} popularity={movie.popularity} muteState={muteState} changeMuteState={changeMuteState} rowTitle={rowTitle} selectedRow={selectedRow} userDetails={userDetails}/>
                         </div>
                     )
                     }

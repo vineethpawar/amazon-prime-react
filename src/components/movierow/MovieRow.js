@@ -19,10 +19,10 @@ const scrollRight = (elem) => {
 }
 
 
-function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedComponent, muteState, changeMuteState, selectedRow, changeScreen, updateScreen }) {
+function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedComponent, muteState, changeMuteState, selectedRow, changeScreen, updateScreen ,mediaType, userDetails}) {
     useEffect(() => {
         Axios.get(requestURL)
-            .then(response => { setMoviesArray(response.data.results); console.log(response.data.results) })
+            .then(response => { setMoviesArray(response.data.results); })
             .catch(() => { })
     }, [updateScreen])
 
@@ -132,10 +132,13 @@ function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedCompo
                 </div>
 
                 <div id={`movie_${rowTitle}`} className={`movie__row__container`}>
-                    {moviesArray.map(movie =>
-                        <div key={movie.id} className="movie__component__wrapper" onMouseOver={() => changeSelectedComponent(movie.id)}>
-                            <MovieComponent changeScreen={changeScreen} id={movie.id} selectedComponent={selectedComponent} image={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} movieTitle={movie.title || movie.name} description={movie.overview} release={movie.release_date || false} rating={movie.vote_average} type={movie.media_type} popularity={movie.popularity} muteState={muteState} changeMuteState={changeMuteState} rowTitle={rowTitle} selectedRow={selectedRow} originalLanguage={movie.original_language} />
-                        </div>
+                    {moviesArray.map(movie => 
+                         
+                          <div key={movie.id} className="movie__component__wrapper" onMouseOver={() => changeSelectedComponent(movie.id)}>
+                            <MovieComponent changeScreen={changeScreen} id={movie.id} selectedComponent={selectedComponent} image={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} movieTitle={movie.title || movie.name} description={movie.overview} release={movie.release_date || false} rating={movie.vote_average} popularity={movie.popularity} muteState={muteState} changeMuteState={changeMuteState} rowTitle={rowTitle} selectedRow={selectedRow} originalLanguage={movie.original_language} mediaType={mediaType} userDetails={userDetails}/>
+                          </div>
+                    
+                        
                     )
                     }
                 </div>
@@ -149,3 +152,4 @@ function MovieRow({ requestURL, rowTitle, selectedComponent, changeSelectedCompo
 }
 
 export default MovieRow
+

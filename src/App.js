@@ -7,39 +7,28 @@ import Detailed from './screens/detailed/Detailed';
 import Navbar from './components/navbar/Navbar';
 import VideoScreen from './screens/videoscreen/VideoScreen';
 import firebase from 'firebase'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-
-
+import HomeIcon from '@material-ui/icons/Home';
+import LiveTvIcon from '@material-ui/icons/LiveTv';
+import ChildCareIcon from '@material-ui/icons/ChildCare';
 
 function App() {
+ 
 
-  useEffect(() => {
+  const [userDetails, setUserDetails] = useState({
+    uname: 'Loading..',
+    dp: 'https://www.nicepng.com/png/full/120-1201448_search-radio-icon-png-blue.png',
+    wathlist: [],
+    blocklist: [],
+    umail: '',
+    uid: '',
+    paymentValidity: ''
+  })
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
+  const changeUserDetails = (obj) => setUserDetails(obj)
 
-        // db.collection('users').doc(user.uid).get()
-        //   .then((res) => {
-
-        //     if (res.exists) {
-        //       console.log('Signed In')
-        //     }
-        //   })
-
-
-        console.log('Signed In')
-
-
-
-      } else {
-
-        console.log('Not Signed In')
-
-      }
-    })
-
-
-  }, [])
 
   const [selectedRow, setSelectedRow] = useState()
   const changeSelectedRow = (row) => setSelectedRow(row)
@@ -50,7 +39,7 @@ function App() {
   const [selectedComponent, setSelectedComponent] = useState();
   const changeSelectedComponent = (id) => { setSelectedComponent(id) }
 
-  const [activeScreen, setActiveScreen] = useState('welcome')
+  const [activeScreen, setActiveScreen] = useState()
   const changeScreen = (screen) => setActiveScreen(screen)
 
   const [originalLanguage, setOriginalLanguage] = useState('en')
@@ -64,14 +53,69 @@ function App() {
 
   const [updateScreen, setUpdateScreen] = useState(0)
   const changeUpdateScreen = () => { setUpdateScreen(updateScreen + 1) }
+
+  const [kidMode, setKidmode] = useState(false)
+  const changeToKidMode = (status) => setKidmode(status)
+
+  const [userUpdate, setUserUpdate] = useState(0)
+  const updateUser = () => setUserUpdate(userUpdate + 1)
+
+
+  const [screenWidth, setScreenWidth] = useState(0);
+  useEffect(() => {
+
+    setScreenWidth(document.body.clientWidth);
+    window.addEventListener("resize", (event) => {
+      setScreenWidth(document.body.clientWidth);
+    })
+
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+
+        db.collection('users').doc(user.uid).get()
+          .then((res) => {
+
+            if (res.exists) {
+              console.log('user signed in')
+            }
+          }
+          )
+
+        changeScreen('main');
+        
+
+      } else {
+        changeScreen('welcome');
+        console.log('user not signed In')
+      }
+    })
+
+  }, [])
+
+
   return (<>
     {videoPlayerScreen ?
       <VideoScreen />
       :
       <div className="app">
-        <Navbar activeScreen={activeScreen} changeScreen={changeScreen} changeMediaType={changeMediaType} changeLanguage={changeLanguage} changeUpdateScreen={changeUpdateScreen} />
+        <Navbar activeScreen={activeScreen} changeScreen={changeScreen} changeMediaType={changeMediaType} changeLanguage={changeLanguage} changeUpdateScreen={changeUpdateScreen} changeToKidMode={changeToKidMode} userUpdate={userUpdate} userDetails={userDetails} changeUserDetails={changeUserDetails} />
+        <ToastContainer
+          position="top-left"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover={false}
+        />
 
-        {activeScreen === 'welcome' && <WelcomeScreen changeScreen={changeScreen} />}
+        {activeScreen === 'preloader' && <div className="full__screen">
+          <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>}
+        {activeScreen === 'welcome' && <WelcomeScreen changeScreen={changeScreen} updateUser={updateUser} />}
 
         {activeScreen === 'main' && mediaType === "movie" && <MovieScreen
           updateScreen={updateScreen}
@@ -84,7 +128,10 @@ function App() {
           changeMuteState={changeMuteState}
           changeSelectedComponent={changeSelectedComponent}
           changeSelectedRow={changeSelectedRow}
+          kidMode={kidMode}
+          userDetails={userDetails}
         />}
+
 
         {activeScreen === 'main' && mediaType === "tv" && <MovieScreen
           updateScreen={updateScreen}
@@ -97,6 +144,8 @@ function App() {
           changeMuteState={changeMuteState}
           changeSelectedComponent={changeSelectedComponent}
           changeSelectedRow={changeSelectedRow}
+          kidMode={kidMode}
+          userDetails={userDetails}
         />}
 
 
@@ -110,12 +159,23 @@ function App() {
           changeSelectedComponent={changeSelectedComponent}
           changeSelectedRow={changeSelectedRow}
           movieId={selectedComponent}
+          userDetails={userDetails}
         />}
 
-
+       
 
       </div>
     }
+
+       {screenWidth < 600 &&
+          <div className="mobile__nav">
+              <div className="mobile__nav__tabs">
+                <span onClick={() => { changeScreen('main'); changeMediaType('movie'); changeToKidMode(false); }}><HomeIcon className="mobile__nav__tab"/> </span>
+                <span onClick={() => { changeScreen('main'); changeMediaType('tv'); changeToKidMode(false); }}> <LiveTvIcon className="mobile__nav__tab"/></span>
+                <span onClick={() => { changeScreen('main'); changeMediaType('movie'); changeToKidMode(true); }}> <ChildCareIcon className="mobile__nav__tab"/> </span>
+              </div>
+          </div>
+        }
   </>
   );
 }

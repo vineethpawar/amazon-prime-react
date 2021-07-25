@@ -25,10 +25,21 @@ function Detailed({ mediaType = 'movie',
     changeMuteState,
     changeSelectedComponent,
     changeSelectedRow,
-    movieId }) {
+    movieId,
+    userDetails
+   }) {
 
-
+   const [screenWidth, setScreenWidth] = useState(0);
+  
+  
+    
     useEffect(() => {
+
+          setScreenWidth(document.body.clientWidth);
+           window.addEventListener("resize", (event) => {
+           setScreenWidth(document.body.clientWidth);
+          })
+
         if (movieId > 10 && movieId !== 'left' && movieId !== 'right') {
             Axios.get(`https://api.themoviedb.org/3/${mediaType}/${movieId}?api_key=${API_KEY}`)
                 .then((response) => {
@@ -80,14 +91,30 @@ function Detailed({ mediaType = 'movie',
     const [budget, setBudget] = useState('N/A')
 
     return (
-        <div id="detailedID" className="detailed">
-            <div className="background__overlay" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
+        <div id="detailedID" className="detailed ">
+          {
+          screenWidth>600 && <span style={{ zIndex: '10', cursor: 'pointer', padding: '10px', position: "absolute", right: "20px", marginTop: '20px' }} className="play__span tippy__span__play" >
+                <PlayArrowIcon className="play__icon" />
+            </span> 
+            }
+            {screenWidth>600?
+            <div className="background__overlay " style={{ position: 'absolute', backgroundImage: `url(${backgroundImage})` }}>
+                {/* <div className="video__overlay shadow__inset" style={{ backgroundColor: '#0f171e', opacity: '0.7' }}></div>
 
-            <div className="detailed__content">
+                <iframe id="playerBGYT" height="100%" width="70%" style={{ position: 'absolute', right: '0' }} src={`https://www.youtube.com/embed/bN0vMB6jd3U?loop=1&playlist=bN0vMB6jd3U&controls=0&autoplay=0&mute=${detailedMute}`} frameBorder="0" allow="autoplay;encrypted-media;" allowFullScreen></iframe> */}
+
+            </div>
+            :
+            <div style={{opacity:'0.7',height:'60vh',backgroundImage:`url(${backgroundImage})`,width:'100%'}} className="detailed__bg__mobile">
+                   
+            </div>
+             }
+
+            <div className="detailed__content" style={screenWidth>600?{padding:'40px',width:'45%',minWidth:'500px'}:{padding:'15px',width:'100%'}}>
 
                 <h2>{title}</h2>
                 <p className="text-muted lead"> <strong> {mediaType === 'movie' && <span>{duration} min  &nbsp;&nbsp; </span>}  {release}</strong></p>
-                <div>
+                <div style={screenWidth<600?{textAlign:'justify',lineHeight:'23px'}:null}>
                     {overview}
                 </div>
 
@@ -143,6 +170,7 @@ function Detailed({ mediaType = 'movie',
                 changeMuteState={changeMuteState}
                 changeSelectedComponent={changeSelectedComponent}
                 changeSelectedRow={changeSelectedRow}
+                userDetails={userDetails}
             />
         </div>
     )

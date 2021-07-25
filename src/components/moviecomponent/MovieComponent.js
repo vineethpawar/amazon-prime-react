@@ -9,13 +9,43 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import './MovieComponent.css'
 import Axios from 'axios'
 import { API_KEY } from '../../request.js'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function MovieComponent({ id, movieTitle, image, description, release, rating, type = "movie", popularity, selectedComponent, muteState, changeMuteState, rowTitle, selectedRow, changeScreen, originalLanguage }) {
+function MovieComponent({ id, movieTitle, image, description, release, rating,mediaType, popularity, selectedComponent, muteState, changeMuteState, rowTitle, selectedRow, changeScreen, originalLanguage,userDetails }) {
+    const [screenWidth, setScreenWidth] = useState(0);
+    const checkValidity = (status)=>{
+        if(new Date() > new Date(userDetails.paymentValidity)) {
+            if(status)
+            toast.error('Please update plan to watch', {
+                position: "top-left",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                paymentExpiry: `${new Date()}`
+            });
+            return false
+        }
+        return true
+    }
 
-
+    const [isMobile,setIsMobile]=useState(false)
     useEffect(() => {
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            setIsMobile(true)
+          }
+        
+        setScreenWidth(document.body.clientWidth);
+         window.addEventListener("resize", (event) => {
+        setScreenWidth(document.body.clientWidth);
+      })
+
+
         if (id > 10 && id !== 'left' && id !== 'right')
-            Axios.get(`https://api.themoviedb.org/3/${type}/${id}/videos?api_key=${API_KEY}&language=en-US`)
+            Axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?api_key=${API_KEY}&language=en-US`)
                 .then((response) => {
                     if (response.data.results && response.data.results.length > 0) {
 
@@ -36,7 +66,7 @@ function MovieComponent({ id, movieTitle, image, description, release, rating, t
         setOverview(description);
         setReleaseDate(release);
         setMovieRating(rating);
-        setVideoType(type);
+        setVideoType(mediaType);
         setMoviePopularity(popularity);
         setOrglang(originalLanguage)
 
@@ -67,7 +97,7 @@ function MovieComponent({ id, movieTitle, image, description, release, rating, t
             {id === selectedComponent && rowTitle === selectedRow ?
                 <div className="movie__component" >
                     {
-                        !expandedComponent ?
+                        !expandedComponent || screenWidth<600 ?
 
                             <div className="movie__wrapper__small" onClick={() => changeScreen('detail')}>
                                 {image !== 'https://image.tmdb.org/t/p/originalnull' ? <img className="movie__img" src={imagePoster} alt="" /> : <img className="movie__img" src="https://th.bing.com/th/id/OIP.No8J9G1fdcptHtEtZ1qSYAHaEK?w=288&h=180&c=7&o=5&pid=1.7" alt="" />}
@@ -114,7 +144,7 @@ function MovieComponent({ id, movieTitle, image, description, release, rating, t
                                     <div className="icon__row" style={{ position: 'relative' }}>
                                         <div className="icon__row__content__overlay"></div>
                                         <span className="icons__left">
-                                            <span className="play__span tippy__span__play" >
+                                            <span className="play__span tippy__span__play" onClick={()=>{checkValidity(true);}}>
                                                 <PlayArrowIcon className="play__icon" />
                                             </span>
                                         </span>
