@@ -13,10 +13,10 @@ This Project uses the TMDB API to fetch Movie Database
 
 ## Project functionalities
 
-1. Authentication - [PENDING]
+1. Authentication - Google Sign in via Firebase
 2. Movie Trailer Popups same as original Prime Video (using Youtube Trailler API) with Audio options
 3. Adding/Removing movies from Wishlist [PENDING]
-4. Payment Gateway - Razorpay to buy membership [PENDING]
+4. Payment Gateway - Razorpay to buy membership
 5. Get Recommended Movies
 6. Get Movie detailed Info
 7. Stream between Indian and International movies & also choose movies of preferred language
