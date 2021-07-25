@@ -18,23 +18,29 @@ Italso has PWA Installability feature.
 2. Movie Trailer Popups same as original Prime Video (using Youtube Trailler API) with Audio options
 3. Adding/Removing movies from Wishlist [PENDING]
 4. Payment Gateway - Razorpay to buy membership
-5. Get Recommended Movies
-6. Get Movie detailed Info
-7. Stream between Indian and International movies & also choose movies of preferred language
+5. Mute/Unmute Video trailer popups
+6. Get Recommended Movies
+7. Get Movie detailed Info
+8. Stream between Indian and International movies & also choose movies of preferred language
 
 
 
 ## Screenshots
 1.Home
-![dear zindadi](https://user-images.githubusercontent.com/55575881/126126777-0bf682bf-54ba-4e1a-934b-72f5e9144946.png)
-
+![Screenshot_10](https://user-images.githubusercontent.com/55575881/126893746-51e0fd83-f0df-4f3b-ade6-400696833618.png)
 
 2.Hovering on Video component
 ![hovercard](https://user-images.githubusercontent.com/55575881/126126894-a704416c-716e-428d-bfdf-42854bfc0c8c.png)
 
 3.Detailed Movie Section
 ![detail-godfather](https://user-images.githubusercontent.com/55575881/126126984-3af29923-4d2e-4656-a14c-1ab7487bec6d.png)
+![Screenshot_11](https://user-images.githubusercontent.com/55575881/126893761-09ead3ab-f76f-49a5-87e3-21c4a3880ef4.png)
 
+4.Authentication - Google Sign in
+![Screenshot_8](https://user-images.githubusercontent.com/55575881/126893715-6e64aaed-c451-49cf-ad60-55a657e0fe2d.png)
+
+5.Payment Gateway - RazorPay
+![Screenshot_11](https://user-images.githubusercontent.com/55575881/126893825-35bce916-61ee-4a5e-a18b-2ca35b7b55d9.png)
 
 
 
