@@ -8,7 +8,7 @@ Italso has PWA Installability feature.
 ## Technologies used
 
 1. FrontEnd - React JS, Material Icons, Bootstrap
-2. Backend - Firebase
+2. Backend - Firebase,Node JS,Express
 3. Authentication -[Yet to be added]
 4. Database - TMDB (The Movie DataBase - https://www.themoviedb.org/) API
 
