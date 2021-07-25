@@ -16,7 +16,7 @@ Italso has PWA Installability feature.
 
 1. Authentication - Google Sign in via Firebase
 2. Movie Trailer Popups same as original Prime Video (using Youtube Trailler API) with Audio options
-3. Adding/Removing movies from Wishlist [PENDING]
+3. Adding/Removing movies from watclater/blocklist [PENDING]
 4. Payment Gateway - Razorpay to buy membership
 5. Mute/Unmute Video trailer popups
 6. Get Recommended Movies
