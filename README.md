@@ -4,7 +4,8 @@ This is a Prime Video Clone made using React JS and Firebase.
 This project is hosted at url: https://prime-clone-c6a65.web.app/ using Firebase. 
 This Project uses the TMDB API to fetch Movie Database
 Italso has PWA Installability feature.\
-Video Demo - https://youtu.be/sHiV4KW-xys
+
+https://github.com/vineethpawar/amazon-prime-react/assets/55575881/25243e53-da35-4646-9a26-3ce82991d6ab
 
 ## Technologies used
 
